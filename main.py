@@ -4,7 +4,7 @@ import checker
 import mailer
 
 CHECK_AFTER=5
-EMAIL_AFTER=1
+EMAIL_AFTER=30
 
 LAST_EMAIL = datetime.datetime.now()
 
