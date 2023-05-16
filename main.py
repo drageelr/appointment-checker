@@ -37,6 +37,7 @@ def take_action():
             content_list.append(str(d['timestamp']) + ' -> ' + d['status'])
         mailer.send_mail('Appointment Check Summary', '\n'.join(content_list))
         data = []
+        LAST_EMAIL = datetime.datetime.now()
 
 def main():
     i = 1
