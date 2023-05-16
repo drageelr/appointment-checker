@@ -23,6 +23,8 @@ def init_request():
     data.append({'status': status, 'timestamp': timestamp})
 
 def take_action():
+    global EMAIL_AFTER
+    global LAST_EMAIL
     global data
     status = data[-1]['status']
     
