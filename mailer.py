@@ -6,7 +6,7 @@ PASS='fczuwdeqqpaujqra'
 def send_mail(subject, contents):
     yag = yagmail.SMTP(EMAIL, PASS)
     yag.send(
-        to='hammadn99@gmail.com',
+        to=['hammadn99@gmail.com', 'farrukhalam90@gmail.com'],
         subject=subject,
         contents=contents,
     )
