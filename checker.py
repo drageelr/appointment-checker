@@ -30,7 +30,7 @@ def check():
         active_value = ''
         for opt in option_elems:
             opt_value = opt.get_attribute("value")
-            if isinstance(opt_value, str) and "winter" in opt_value.lower():
+            if isinstance(opt_value, str) and os.environ.get('KEYWORD') in opt_value.lower():
                 active = True
                 # active_value = opt_value
                 break
