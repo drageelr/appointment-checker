@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:116.0-chromedriver-116.0
+FROM selenium/standalone-chrome:114.0.5735.133-chromedriver-114.0.5735.90
 
 USER root
 
