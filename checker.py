@@ -47,7 +47,7 @@ def check():
             driver.quit()
             return (None, False)
     except Exception as e:
-        print('ERROR')
+        print('ERROR', e)
         driver.quit()
         # print(e)
         return (e, False)
