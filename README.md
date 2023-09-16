@@ -78,6 +78,8 @@ To host the appointment checker tool remotely, you need SSH access to a machine.
 
 <img width="829" alt="image" src="https://github.com/drageelr/appointment-checker/assets/56049229/6ae0d674-ae79-402c-a7c3-42d24f5bf678">
 
+> **Note:** Change the **Command** to `pm2 start main.py --interpreter python3` as the one in the screenshot breaks.
+
 Once you're done, click on the **Back** button in the bottom left corner.
 
 9. Now, click on the **Edit Plan** button and ensure that you have the following configuraiton:
