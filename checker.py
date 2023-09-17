@@ -1,10 +1,10 @@
 import os
+import logging
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import os
 
 def check():
     
@@ -53,6 +53,7 @@ def check():
             return (None, False)
     except Exception as e:
         print('ERROR')
+        logging.error('An error occurred: %s', e)
         driver.quit()
         # print(e)
         return (e, False)
