@@ -17,7 +17,6 @@ def check():
     op.add_argument('--window-size=1920,1080')
     op.add_argument('--disable-gpu')
     op.add_argument('--allow-running-insecure-content')
-    op.add_argument('--headless')
 
     driver = webdriver.Chrome(options=op)
 
