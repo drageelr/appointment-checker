@@ -13,4 +13,4 @@ def send_mail(subject, contents):
     )
 
 if __name__ == '__main__':
-    send_mail('hammadn99@gmail.com', 'Test Email', 'Test Content')
+    send_mail('hassan.tanveer0097@gmail.com', 'Test Email', 'Test Content')
