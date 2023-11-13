@@ -1,3 +1,4 @@
 selenium
 yagmail
 undetected_chromedriver
+seleniumbase
