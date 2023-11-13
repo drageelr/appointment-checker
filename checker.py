@@ -1,36 +1,28 @@
 import os
 import logging
 
+import undetected_chromedriver as UC
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def check():
+    options = webdriver.ChromeOptions() 
+    options.add_argument("start-maximized")
+    driver = uc.Chrome(options=options)
+    print('Driver Started')
     
-    op = webdriver.ChromeOptions()
-
-    user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
-    
-    op.add_argument(f'user-agent={user_agent}')
-    op.add_argument('--no-sandbox')
-    op.add_argument('--window-size=1920,1080')
-    op.add_argument('--headless')
-    op.add_argument('--disable-gpu')
-    op.add_argument('--allow-running-insecure-content')
-    op.add_argument('--headless')
-
-    driver = webdriver.Chrome(options=op)
-    # print('Driver Started')
     driver.get("https://service2.diplo.de/rktermin/extern/appointment_showForm.do?locationCode=isla&realmId=108&categoryId=1600")
-    # print('Page Fetched')
+    print('Page Fetched')
 
     try:
         elem_select = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/div[2]/div[1]/div[1]/fieldset/form/div[8]/div[2]/select")))
-        # print('Select Element Fetched')
+        print('Select Element Fetched')
 
         option_elems = elem_select.find_elements(By.TAG_NAME ,"option")
-        # print('Options Fetched')
+        print('Options Fetched')
 
         active = False
         active_value = ''
@@ -55,7 +47,7 @@ def check():
         print('ERROR')
         logging.error('An error occurred: %s', e)
         driver.quit()
-        # print(e)
+        print(e)
         return (e, False)
 
 if __name__ == '__main__':
