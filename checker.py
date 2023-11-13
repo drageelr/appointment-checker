@@ -1,6 +1,8 @@
 import os
 import logging
 
+from seleniumbase import Driver
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -8,17 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 def check():
     
-    op = webdriver.ChromeOptions()
-
-    user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'
-    
-    op.add_argument(f'user-agent={user_agent}')
-    op.add_argument('--no-sandbox')
-    op.add_argument('--window-size=1920,1080')
-    op.add_argument('--disable-gpu')
-    op.add_argument('--allow-running-insecure-content')
-
-    driver = webdriver.Chrome(options=op)
+    driver = Driver(uc=True, incognito=True, headless=True)
 
     driver.get("https://service2.diplo.de/rktermin/extern/appointment_showForm.do?locationCode=isla&realmId=108&categoryId=1600")
 
